@@ -17,6 +17,10 @@ def convert(word)
 
     if vowels.include?(word[0])
         word + 'ay'
+    elsif consonants.first == word[0] && vowels.last == word[1]
+        word[2..-1] + word[0..1] + 'ay'
+    elsif consonants.include?(word[0]) && consonants.first == word[1] && vowels.last == word[2]
+        word[3..-1] + word[0..2] + 'ay'
     elsif consonants.include?(word[0]) && consonants.include?(word[1]) && consonants.include?(word[2])
         word[3..-1] + word[0..2] + 'ay'
     elsif consonants.include?(word[0]) && consonants.include?(word[1])
